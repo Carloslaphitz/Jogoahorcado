@@ -1,0 +1,63 @@
+
+print ('juego del ahorcado')
+import random
+intentos=0
+palabra_secretas = ['python','casa','arbol','argentina','programacion','agua','perro','sapo','agua','campo','caballo']
+palabra_secreta=random.choice(palabra_secretas)
+letras_adivinadas = []
+intentos_maximos = 6
+while intentos < intentos_maximos:
+    palabra_mostrada = ''
+    for letra in palabra_secreta:
+        if letra in letras_adivinadas :
+            palabra_mostrada += letra
+        else:
+            palabra_mostrada += '_'
+            print (f'palabra:{palabra_mostrada}')
+
+letra_ingresada = input('ingresa una letra:').lower()
+if letra_ingresada in palabra_secreta:
+    letras_adivinadas.append(letra_ingresada)
+    print ('correcto has adivinado una letra')
+else:
+    intentos +=1
+    print(f'letra incorrecta, te quedan{intentos_maximos - intentos}intentos.')
+
+if set(palabra_secreta)==set(letras_adivinadas):
+        print(f'congrats adivinaste :{palabra_secreta}')
+
+else: intentos == intentos_maximos
+print(f'perdiste, la palabra era:{palabra_secreta}')
+¡Gracias!
+
+
+Em ter., 30 de jul. de 2024 15:45, carlos laphitz <t.b.a.transf@gmail.com> escreveu:
+print ('juego del ahorcado')
+import random
+intentos=0
+palabra_secretas = ['python','casa','arbol','argentina','programacion','agua','perro','sapo','agua','campo','caballo']
+palabra_secreta=random.choice(palabra_secretas)
+letras_adivinadas = []
+intentos_maximos = 6
+while intentos < intentos_maximos:
+    palabra_mostrada = ''
+    for letra in palabra_secreta:
+        if letra in letras_adivinadas :
+            palabra_mostrada += letra
+        else:
+            palabra_mostrada += '_'
+            print (f'palabra:{palabra_mostrada}')
+
+letra_ingresada = input('ingresa una letra:').lower()
+if letra_ingresada in palabra_secreta:
+    letras_adivinadas.append(letra_ingresada)
+    print ('correcto has adivinado una letra')
+else:
+    intentos +=1
+    print(f'letra incorrecta, te quedan{intentos_maximos - intentos}intentos.')
+
+if set(palabra_secreta)==set(letras_adivinadas):
+        print(f'congrats adivinaste :{palabra_secreta}')
+
+else: intentos == intentos_maximos
+print(f'perdiste, la palabra era:{palabra_secreta}')
